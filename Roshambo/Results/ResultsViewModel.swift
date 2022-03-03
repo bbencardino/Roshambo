@@ -2,8 +2,8 @@ import Foundation
 
 struct ResultsViewModel {
 
-    let randomMove: Move
     let playerMove: Move
+    let randomMove: Move
 
 //MARK: - Update Methods
     
@@ -40,9 +40,9 @@ struct ResultsViewModel {
           case (.paper, .rock), (.scissors, .paper), (.rock, .scissors):
              return "You won."
           case (.paper, .paper), (.scissors, .scissors), (.rock, .rock):
-              return "It's a tie"
+              return "It's a tie."
           default:
-              return "You lost"
+              return "You lost."
           }
     }
 }

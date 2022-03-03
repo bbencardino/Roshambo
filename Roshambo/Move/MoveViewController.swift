@@ -2,6 +2,9 @@ import UIKit
 
 class MoveViewController: UIViewController {
 
+    static private let paperSegue = "paperSegue"
+    static private let resultsIdentifier = "ResultsViewController"
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -9,25 +12,22 @@ class MoveViewController: UIViewController {
     @IBAction func rockPressed(_ sender: Any) {
 
         let resultsVC: ResultsViewController
-        resultsVC = storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
+        resultsVC = storyboard?.instantiateViewController(withIdentifier: MoveViewController.resultsIdentifier) as! ResultsViewController
         resultsVC.viewModel = makeViewModel(player: .rock)
         present(resultsVC, animated: true, completion: nil)
     }
 
     @IBAction func paperPressed(_ sender: Any) {
 
-        performSegue(withIdentifier: "paperSegue", sender: self)
+        performSegue(withIdentifier: MoveViewController.paperSegue, sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         let resultsVC = segue.destination as! ResultsViewController
 
-        if segue.identifier == "paperSegue" {
-            resultsVC.viewModel = makeViewModel(player: .paper)
-        } else {
-            resultsVC.viewModel = makeViewModel(player: .scissors)
-        }
+        let playerMove: Move = segue.identifier == MoveViewController.paperSegue ? .paper : .scissors
+        resultsVC.viewModel = makeViewModel(player: playerMove)
     }
 
     //MARK: - Private Functions
@@ -38,6 +38,6 @@ class MoveViewController: UIViewController {
             fatalError("Random case not found.")
         }
 
-        return ResultsViewModel(randomMove: randomMove, playerMove: player)
+        return ResultsViewModel(playerMove: player, randomMove: randomMove)
     }
 }

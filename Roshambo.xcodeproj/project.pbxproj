@@ -16,7 +16,19 @@
 		5E43C23927CE692B0027E80D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43C23827CE692B0027E80D /* ResultsViewController.swift */; };
 		5E43C23B27CF89A50027E80D /* Moves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43C23A27CF89A50027E80D /* Moves.swift */; };
 		5EB268D427D0DB9200A1128C /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB268D327D0DB9200A1128C /* ResultsViewModel.swift */; };
+		5EB268DE27D1499000A1128C /* RoshamboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB268DD27D1499000A1128C /* RoshamboTests.swift */; };
+		5EB268E527D14A9300A1128C /* ResultsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB268E427D14A9300A1128C /* ResultsViewModelTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EB268DF27D1499000A1128C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E43C21927CE5FBC0027E80D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E43C22027CE5FBC0027E80D;
+			remoteInfo = Roshambo;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5E43C22127CE5FBC0027E80D /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,10 +42,20 @@
 		5E43C23827CE692B0027E80D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		5E43C23A27CF89A50027E80D /* Moves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moves.swift; sourceTree = "<group>"; };
 		5EB268D327D0DB9200A1128C /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
+		5EB268DB27D1499000A1128C /* RoshamboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoshamboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EB268DD27D1499000A1128C /* RoshamboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoshamboTests.swift; sourceTree = "<group>"; };
+		5EB268E427D14A9300A1128C /* ResultsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5E43C21E27CE5FBC0027E80D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EB268D827D1499000A1128C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				5E43C22327CE5FBC0027E80D /* Roshambo */,
+				5EB268DC27D1499000A1128C /* RoshamboTests */,
 				5E43C22227CE5FBC0027E80D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5E43C22127CE5FBC0027E80D /* Roshambo.app */,
+				5EB268DB27D1499000A1128C /* RoshamboTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +132,15 @@
 			path = Results;
 			sourceTree = "<group>";
 		};
+		5EB268DC27D1499000A1128C /* RoshamboTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EB268E427D14A9300A1128C /* ResultsViewModelTests.swift */,
+				5EB268DD27D1499000A1128C /* RoshamboTests.swift */,
+			);
+			path = RoshamboTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,6 +161,24 @@
 			productReference = 5E43C22127CE5FBC0027E80D /* Roshambo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5EB268DA27D1499000A1128C /* RoshamboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EB268E327D1499000A1128C /* Build configuration list for PBXNativeTarget "RoshamboTests" */;
+			buildPhases = (
+				5EB268D727D1499000A1128C /* Sources */,
+				5EB268D827D1499000A1128C /* Frameworks */,
+				5EB268D927D1499000A1128C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EB268E027D1499000A1128C /* PBXTargetDependency */,
+			);
+			name = RoshamboTests;
+			productName = RoshamboTests;
+			productReference = 5EB268DB27D1499000A1128C /* RoshamboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,6 +191,10 @@
 				TargetAttributes = {
 					5E43C22027CE5FBC0027E80D = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					5EB268DA27D1499000A1128C = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 5E43C22027CE5FBC0027E80D;
 					};
 				};
 			};
@@ -157,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				5E43C22027CE5FBC0027E80D /* Roshambo */,
+				5EB268DA27D1499000A1128C /* RoshamboTests */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +225,13 @@
 				5E43C23127CE5FBE0027E80D /* LaunchScreen.storyboard in Resources */,
 				5E43C22E27CE5FBE0027E80D /* Assets.xcassets in Resources */,
 				5E43C22C27CE5FBC0027E80D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EB268D927D1499000A1128C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +251,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5EB268D727D1499000A1128C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EB268DE27D1499000A1128C /* RoshamboTests.swift in Sources */,
+				5EB268E527D14A9300A1128C /* ResultsViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EB268E027D1499000A1128C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5E43C22027CE5FBC0027E80D /* Roshambo */;
+			targetProxy = 5EB268DF27D1499000A1128C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5E43C22A27CE5FBC0027E80D /* Main.storyboard */ = {
@@ -382,6 +462,42 @@
 			};
 			name = Release;
 		};
+		5EB268E127D1499000A1128C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GU6D4AYLD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bbencardino.RoshamboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roshambo.app/Roshambo";
+			};
+			name = Debug;
+		};
+		5EB268E227D1499000A1128C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GU6D4AYLD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bbencardino.RoshamboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roshambo.app/Roshambo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,6 +515,15 @@
 			buildConfigurations = (
 				5E43C23627CE5FBE0027E80D /* Debug */,
 				5E43C23727CE5FBE0027E80D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EB268E327D1499000A1128C /* Build configuration list for PBXNativeTarget "RoshamboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EB268E127D1499000A1128C /* Debug */,
+				5EB268E227D1499000A1128C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
