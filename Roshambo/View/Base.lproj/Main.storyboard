@@ -76,9 +76,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="paperButton" destination="WRb-WW-f5C" id="49l-s4-jtX"/>
-                        <outlet property="rockButton" destination="khp-6p-NGZ" id="N83-Ib-GcL"/>
-                        <outlet property="scissorButton" destination="o7J-Zt-VxG" id="5jO-XO-7Vz"/>
                         <segue destination="bac-K2-7oC" kind="presentation" identifier="paperSegue" id="Jt8-Mf-mK5"/>
                     </connections>
                 </viewController>

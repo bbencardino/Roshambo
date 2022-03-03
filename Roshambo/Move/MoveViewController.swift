@@ -2,20 +2,21 @@ import UIKit
 
 class MoveViewController: UIViewController {
 
-    @IBOutlet weak var paperButton: UIButton!
-    @IBOutlet weak var rockButton: UIButton!
-    @IBOutlet weak var scissorButton: UIButton!
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-//  rock
+
     @IBAction func rockPressed(_ sender: Any) {
 
         let resultsVC: ResultsViewController
         resultsVC = storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
-        resultsVC.viewModel = ResultsViewModel(randomMove: .allCases.randomElement()!, playerMove: .rock)
+        resultsVC.viewModel = makeViewModel(player: .rock)
         present(resultsVC, animated: true, completion: nil)
+    }
+
+    @IBAction func paperPressed(_ sender: Any) {
+
+        performSegue(withIdentifier: "paperSegue", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -23,17 +24,20 @@ class MoveViewController: UIViewController {
         let resultsVC = segue.destination as! ResultsViewController
 
         if segue.identifier == "paperSegue" {
-
-            resultsVC.viewModel = ResultsViewModel(randomMove: .allCases.randomElement()!, playerMove: .paper)
-
-
+            resultsVC.viewModel = makeViewModel(player: .paper)
         } else {
-            resultsVC.viewModel = ResultsViewModel(randomMove: .allCases.randomElement()!, playerMove: .scissors)
+            resultsVC.viewModel = makeViewModel(player: .scissors)
         }
     }
-//  paper
-    @IBAction func paperPressed(_ sender: Any) {
 
-        performSegue(withIdentifier: "paperSegue", sender: self)
+    //MARK: - Private Functions
+
+    private func makeViewModel(player: Move) -> ResultsViewModel {
+
+        guard let randomMove: Move = .allCases.randomElement() else {
+            fatalError("Random case not found.")
+        }
+
+        return ResultsViewModel(randomMove: randomMove, playerMove: player)
     }
 }
