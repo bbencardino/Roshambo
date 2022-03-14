@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Roshambo
-//
-//  Created by Isabella Bencardino on 01/03/2022.
-//
-
 import UIKit
 
 @main

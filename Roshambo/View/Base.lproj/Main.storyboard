@@ -42,7 +42,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="paper"/>
                                                 <connections>
-                                                    <action selector="paperPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y21-iB-PhP"/>
+                                                    <action selector="moveChoce:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SVc-Ao-4ux"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khp-6p-NGZ" userLabel="RockButton">
@@ -50,7 +50,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="rock"/>
                                                 <connections>
-                                                    <action selector="rockPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Jr-ku-mDb"/>
+                                                    <action selector="moveChoce:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JFn-bO-EbT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7J-Zt-VxG" userLabel="ScissorButton">
@@ -58,7 +58,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="scissors"/>
                                                 <connections>
-                                                    <segue destination="bac-K2-7oC" kind="presentation" identifier="scissorSegue" id="6O0-2d-z2N"/>
+                                                    <action selector="moveChoce:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ab-1Z-0O0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -76,12 +76,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="bac-K2-7oC" kind="presentation" identifier="paperSegue" id="Jt8-Mf-mK5"/>
+                        <outlet property="paperButton" destination="WRb-WW-f5C" id="RuA-RZ-RTe"/>
+                        <outlet property="rockButton" destination="khp-6p-NGZ" id="Tk5-WP-en0"/>
+                        <outlet property="scisssorsButton" destination="o7J-Zt-VxG" id="TfN-RM-OTu"/>
+                        <segue destination="bac-K2-7oC" kind="presentation" identifier="toTheResults" id="NvC-kh-3jT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1597" y="62"/>
+            <point key="canvasLocation" x="-1683" y="-472"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="iNn-CX-Ktr">
@@ -136,12 +139,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODf-br-wlK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-857" y="62"/>
+            <point key="canvasLocation" x="-654" y="-472"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6O0-2d-z2N"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="paper" width="75" height="65"/>
         <image name="rock" width="75" height="65"/>

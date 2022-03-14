@@ -2,33 +2,41 @@ import UIKit
 
 class MoveViewController: UIViewController {
 
-    static private let paperSegue = "paperSegue"
-    static private let resultsIdentifier = "ResultsViewController"
-
+    @IBOutlet weak var paperButton: UIButton!
+    @IBOutlet weak var rockButton: UIButton!
+    @IBOutlet weak var scisssorsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    @IBAction func rockPressed(_ sender: Any) {
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        let resultsVC: ResultsViewController
-        resultsVC = storyboard?.instantiateViewController(withIdentifier: MoveViewController.resultsIdentifier) as! ResultsViewController
-        resultsVC.viewModel = makeViewModel(player: .rock)
-        present(resultsVC, animated: true, completion: nil)
+       guard let sender = sender as? UIButton
+       else { return }
+
+       let resultsVC = segue.destination as! ResultsViewController
+       if segue.identifier == "toTheResults" {
+           let playerMove: Move
+
+           if sender == paperButton {
+               playerMove = .paper
+           } else if sender == rockButton {
+               playerMove = .rock
+           } else {
+               playerMove = .scissors
+           }
+           resultsVC.viewModel = makeViewModel(player: playerMove)
+       }
+
     }
 
-    @IBAction func paperPressed(_ sender: Any) {
+    @IBAction func moveChoce(_ sender: UIButton) {
 
-        performSegue(withIdentifier: MoveViewController.paperSegue, sender: self)
+        performSegue(withIdentifier: "toTheResults", sender:  sender)
+
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        let resultsVC = segue.destination as! ResultsViewController
-
-        let playerMove: Move = segue.identifier == MoveViewController.paperSegue ? .paper : .scissors
-        resultsVC.viewModel = makeViewModel(player: playerMove)
-    }
 
     //MARK: - Private Functions
 
