@@ -52,7 +52,7 @@ class ResultsViewModelTests: XCTestCase {
         //WHEN
         let text = viewModel.getResultLabel()
         //THEN
-        XCTAssertEqual(text, "rock vs. rock. It's a tie.")
+        XCTAssertEqual(text, "Rock vs. Rock. It's a tie.")
     }
 
     func testLabel_YouWon() {
@@ -61,7 +61,7 @@ class ResultsViewModelTests: XCTestCase {
         //WHEN
         let text = viewModel.getResultLabel()
         //THEN
-        XCTAssertEqual(text, "paper vs. rock. You won.")
+        XCTAssertEqual(text, "Paper vs. Rock. You won.")
     }
 
     func testLabel_YouLost() {
@@ -70,6 +70,6 @@ class ResultsViewModelTests: XCTestCase {
         //WHEN
         let text = viewModel.getResultLabel()
         //THEN
-        XCTAssertEqual(text, "paper vs. scissors. You lost.")
+        XCTAssertEqual(text, "Paper vs. Scissors. You lost.")
     }
 }

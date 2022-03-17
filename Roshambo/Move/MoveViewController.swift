@@ -36,8 +36,6 @@ class MoveViewController: UIViewController {
         performSegue(withIdentifier: "toTheResults", sender:  sender)
 
     }
-
-
     //MARK: - Private Functions
 
     private func makeViewModel(player: Move) -> ResultsViewModel {

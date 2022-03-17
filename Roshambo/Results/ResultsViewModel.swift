@@ -27,7 +27,7 @@ struct ResultsViewModel {
 
     func getResultLabel() -> String  {
         let result = compute()
-        let text = "\(playerMove) vs. \(randomMove). \(result)"
+        let text = "\(playerMove.rawValue) vs. \(randomMove.rawValue). \(result)"
         return text
     }
     
