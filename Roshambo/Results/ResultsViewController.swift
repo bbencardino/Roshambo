@@ -9,13 +9,16 @@ class ResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play again", style: .plain, target: self, action: #selector(playAgain))
 
         updateImage()
         updateResultLabel()
     }
 
-    @IBAction func playAgain(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @objc private func playAgain(_ sender: Any) {
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
 
 //MARK: - Private/Update Functions

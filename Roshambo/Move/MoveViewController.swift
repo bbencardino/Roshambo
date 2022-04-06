@@ -28,10 +28,9 @@ class MoveViewController: UIViewController {
            }
            resultsVC.viewModel = makeViewModel(player: playerMove)
        }
-
     }
 
-    @IBAction func moveChoce(_ sender: UIButton) {
+    @IBAction func chooseMovement(_ sender: UIButton) {
 
         performSegue(withIdentifier: "toTheResults", sender:  sender)
 
