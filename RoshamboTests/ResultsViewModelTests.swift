@@ -50,7 +50,7 @@ class ResultsViewModelTests: XCTestCase {
         //GIVEN
         let viewModel = ResultsViewModel(playerMove: .rock, randomMove: .rock)
         //WHEN
-        let text = viewModel.getResultLabel()
+        let text = viewModel.getResult()
         //THEN
         XCTAssertEqual(text, "Rock vs. Rock. It's a tie.")
     }
@@ -59,7 +59,7 @@ class ResultsViewModelTests: XCTestCase {
         //GIVEN
         let viewModel = ResultsViewModel(playerMove: .paper, randomMove: .rock)
         //WHEN
-        let text = viewModel.getResultLabel()
+        let text = viewModel.getResult()
         //THEN
         XCTAssertEqual(text, "Paper vs. Rock. You won.")
     }
@@ -68,7 +68,7 @@ class ResultsViewModelTests: XCTestCase {
         //GIVEN
         let viewModel = ResultsViewModel(playerMove: .paper, randomMove: .scissors)
         //WHEN
-        let text = viewModel.getResultLabel()
+        let text = viewModel.getResult()
         //THEN
         XCTAssertEqual(text, "Paper vs. Scissors. You lost.")
     }

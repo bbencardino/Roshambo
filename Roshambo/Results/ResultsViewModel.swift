@@ -2,8 +2,12 @@ import Foundation
 
 struct ResultsViewModel {
 
-    let playerMove: Move
-    let randomMove: Move
+    let playerMove: Move!
+    let randomMove: Move!
+
+    lazy var match = getResult()
+    var gameHistory: [String] = []
+    
 
 //MARK: - Update Methods
     
@@ -25,12 +29,12 @@ struct ResultsViewModel {
         return imageName
     }
 
-    func getResultLabel() -> String  {
+    func getResult() -> String  {
         let result = compute()
         let text = "\(playerMove.rawValue) vs. \(randomMove.rawValue). \(result)"
         return text
     }
-    
+
     //MARK: - Private Functions
     private func compute() -> String {
           // 1. get the move from the player

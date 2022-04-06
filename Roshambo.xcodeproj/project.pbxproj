@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1370C227FC482100EE8CA9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1370C127FC482100EE8CA9 /* HistoryViewController.swift */; };
 		5E43C22527CE5FBC0027E80D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43C22427CE5FBC0027E80D /* AppDelegate.swift */; };
 		5E43C22727CE5FBC0027E80D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43C22627CE5FBC0027E80D /* SceneDelegate.swift */; };
 		5E43C22927CE5FBC0027E80D /* MoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43C22827CE5FBC0027E80D /* MoveViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E1370C127FC482100EE8CA9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		5E43C22127CE5FBC0027E80D /* Roshambo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roshambo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E43C22427CE5FBC0027E80D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E43C22627CE5FBC0027E80D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1370C027FC47F200EE8CA9 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				5E1370C127FC482100EE8CA9 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		5E43C21827CE5FBC0027E80D = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 				5EB268CF27D0DADC00A1128C /* Model */,
 				5EB268D127D0DB5200A1128C /* Move */,
 				5EB268D227D0DB6400A1128C /* Results */,
+				5E1370C027FC47F200EE8CA9 /* History */,
 			);
 			path = Roshambo;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 				5E43C22727CE5FBC0027E80D /* SceneDelegate.swift in Sources */,
 				5EB268D427D0DB9200A1128C /* ResultsViewModel.swift in Sources */,
 				5E43C23B27CF89A50027E80D /* Moves.swift in Sources */,
+				5E1370C227FC482100EE8CA9 /* HistoryViewController.swift in Sources */,
 				5E43C23927CE692B0027E80D /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

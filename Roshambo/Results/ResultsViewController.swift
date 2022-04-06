@@ -16,6 +16,7 @@ class ResultsViewController: UIViewController {
 
     @IBAction func playAgain(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        print(viewModel.gameHistory)
     }
 
 //MARK: - Private/Update Functions
@@ -25,7 +26,7 @@ class ResultsViewController: UIViewController {
     }
 
     private func updateResultLabel() {
-        let resultText = viewModel.getResultLabel()
+        let resultText = viewModel.getResult()
         resultLabel.text = resultText
     }
 }
