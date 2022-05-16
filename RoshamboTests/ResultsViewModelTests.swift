@@ -10,66 +10,67 @@ class ResultsViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+
     func testImageItsATie() {
-        //GIVEN
+        // GIVEN
         let viewModel = ResultsViewModel(playerMove: .paper, randomMove: .paper)
-        //WHEN
+        // WHEN
         let imageName = viewModel.getImageName()
-        //THEN
+        // THEN
         XCTAssertEqual(imageName, "itsATie")
     }
 
     func testImageScissorsAndPaper() {
-        //GIVEN
-        let viewModel = ResultsViewModel(playerMove: .paper, randomMove: .scissors)
-        //WHEN
+        // GIVEN
+        let viewModel = ResultsViewModel(playerMove: .scissors, randomMove: .paper)
+        // WHEN
         let imageName = viewModel.getImageName()
-        //THEN
+        // THEN
         XCTAssertEqual(imageName, "ScissorsCutPaper")
     }
 
     func testImageRockAndScissors() {
-        //GIVEN
+        // GIVEN
         let viewModel = ResultsViewModel(playerMove: .rock, randomMove: .scissors)
-        //WHEN
+        // WHEN
         let imageName = viewModel.getImageName()
-        //THEN
+        // THEN
         XCTAssertEqual(imageName, "RockCrushesScissors")
     }
 
     func testImageRockAndPaper() {
-        //GIVEN
+        // GIVEN
         let viewModel = ResultsViewModel(playerMove: .rock, randomMove: .paper)
-        //WHEN
+        // WHEN
         let imageName = viewModel.getImageName()
-        //THEN
+        // THEN
         XCTAssertEqual(imageName, "PaperCoversRock")
     }
 
     func testLabel_ItsATie() {
-        //GIVEN
+        // GIVEN
         let viewModel = ResultsViewModel(playerMove: .rock, randomMove: .rock)
-        //WHEN
+        // WHEN
         let text = viewModel.getResultLabel()
-        //THEN
+        // THEN
         XCTAssertEqual(text, "Rock vs. Rock. It's a tie.")
     }
 
     func testLabel_YouWon() {
-        //GIVEN
+        // GIVEN
         let viewModel = ResultsViewModel(playerMove: .paper, randomMove: .rock)
-        //WHEN
+        // WHEN
         let text = viewModel.getResultLabel()
-        //THEN
+        // THEN
         XCTAssertEqual(text, "Paper vs. Rock. You won.")
     }
 
     func testLabel_YouLost() {
-        //GIVEN
+        // GIVEN
         let viewModel = ResultsViewModel(playerMove: .paper, randomMove: .scissors)
-        //WHEN
+        // WHEN
         let text = viewModel.getResultLabel()
-        //THEN
+        // THEN
         XCTAssertEqual(text, "Paper vs. Scissors. You lost.")
     }
 }

@@ -5,18 +5,16 @@ class MoveViewController: UIViewController {
     @IBOutlet weak var paperButton: UIButton!
     @IBOutlet weak var rockButton: UIButton!
     @IBOutlet weak var scisssorsButton: UIButton!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    private let toTheResults = "toTheResults"
 
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
        guard let sender = sender as? UIButton
        else { return }
 
-       let resultsVC = segue.destination as! ResultsViewController
-       if segue.identifier == "toTheResults" {
+       guard let resultsVC = segue.destination as? ResultsViewController
+       else { return }
+       if segue.identifier == toTheResults {
            let playerMove: Move
 
            if sender == paperButton {
@@ -32,10 +30,10 @@ class MoveViewController: UIViewController {
 
     @IBAction func chooseMovement(_ sender: UIButton) {
 
-        performSegue(withIdentifier: "toTheResults", sender:  sender)
+        performSegue(withIdentifier: toTheResults, sender: sender)
 
     }
-    //MARK: - Private Functions
+    // MARK: - Private Functions
 
     private func makeViewModel(player: Move) -> ResultsViewModel {
 

@@ -9,7 +9,10 @@ class ResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play again", style: .plain, target: self, action: #selector(playAgain))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play again",
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(playAgain))
 
         updateImage()
         updateResultLabel()
@@ -21,7 +24,7 @@ class ResultsViewController: UIViewController {
         }
     }
 
-//MARK: - Private/Update Functions
+// MARK: - Private/Update Functions
     private func updateImage() {
         let imageName = viewModel.getImageName()
         resultView.image = UIImage(named: imageName)

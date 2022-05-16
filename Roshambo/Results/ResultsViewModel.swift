@@ -5,8 +5,8 @@ struct ResultsViewModel {
     let playerMove: Move
     let randomMove: Move
 
-//MARK: - Update Methods
-    
+// MARK: - Update Methods
+
     func getImageName() -> String {
 
         let turn = [randomMove, playerMove]
@@ -25,18 +25,18 @@ struct ResultsViewModel {
         return imageName
     }
 
-    func getResultLabel() -> String  {
+    func getResultLabel() -> String {
         let result = compute()
         let text = "\(playerMove.rawValue) vs. \(randomMove.rawValue). \(result)"
         return text
     }
-    
-    //MARK: - Private Functions
+
+    // MARK: - Private Functions
     private func compute() -> String {
           // 1. get the move from the player
           // 2. compare the player's move with the random move
           // 3. return if the player is winner
-          switch (playerMove,randomMove) {
+          switch (playerMove, randomMove) {
           case (.paper, .rock), (.scissors, .paper), (.rock, .scissors):
              return "You won."
           case (.paper, .paper), (.scissors, .scissors), (.rock, .rock):
