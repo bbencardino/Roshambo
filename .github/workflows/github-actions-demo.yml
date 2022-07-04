@@ -1,0 +1,9 @@
+name: Run tests
+on: [pull_request]
+jobs:
+  Test-project:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3 # clone
+      - run: bundle install
+      - run: bundle exec fastlane tests
