@@ -17,7 +17,7 @@ class ResultsViewModelTests: XCTestCase {
         // WHEN
         let imageName = viewModel.getImageName()
         // THEN
-        XCTAssertEqual(imageName, "itsATie")
+        XCTAssertEqual(imageName, "itsTie")
     }
 
     func testImageScissorsAndPaper() {
