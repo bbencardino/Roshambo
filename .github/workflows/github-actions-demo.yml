@@ -6,3 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3 # clone
       - run: bundle install
+      - run: bundle exec fastlane tests
